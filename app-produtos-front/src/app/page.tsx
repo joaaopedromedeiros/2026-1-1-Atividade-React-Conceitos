@@ -81,7 +81,14 @@ export default function Home() {
             gap: "15px",
           }}
         >
-          {listarProdutos()}
+       {filtrarProdutos().map((produto) => (
+          <ProdutoCard
+            key={produto.id}
+            title={produto.title}
+            price={produto.price}
+            thumbnail={produto.thumbnail}
+          />
+        ))}
         </div>
       </main>
     </div>
